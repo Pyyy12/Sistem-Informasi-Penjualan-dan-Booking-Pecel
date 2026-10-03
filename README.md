@@ -1,58 +1,15 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
-```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+🍛 Pecel Nusantara Resto & Seat Booking SystemAplikasi web pemesanan meja interaktif dan manajemen penjualan restoran pecel berbasis Laravel 11. Sistem ini mengusung reservasi tempat duduk visual ala bioskop dengan pembagian meja per kategori/kapasitas (Meja Berdua, Meja Ber-4, Meja Ber-8, hingga Hall VIP 100 orang), direct payment checkout, konfirmasi otomatis via WhatsApp, serta dashboard admin untuk pencatatan dan akumulasi pendapatan harian maupun bulanan.🌟 Fitur Utama1. Sisi Pelanggan (Customer / Front-End)Interactive Seat Picker (Ala Bioskop):Meja Berdua (2 Pax): Cocok untuk pasangan/romantis.Meja Ber-4 (4 Pax): Cocok untuk keluarga kecil.Meja Ber-8 (8 Pax): Cocok untuk rombongan/kumpul santai.Grand Hall VIP (100 Pax): Ruang khusus untuk reuni akbar, gathering, maupun resepsi pernikahan.Pengecekan Ketersediaan Real-time (AJAX): Kursi yang telah dipesan pada tanggal dan jam sesi tertentu otomatis berstatus disable/tidak bisa dipilih kembali.Instruksi Pembayaran & Checkout: Mendukung simulasi metode pembayaran Transfer Bank (BCA, Mandiri) dan QRIS.Direct WhatsApp Confirmation: Setelah memesan, sistem otomatis menyusun pesan teks terformat rapi berisi kode booking, detail paket, dan nominal yang langsung mengarah ke nomor WhatsApp kasir/admin.2. Sisi Admin (Back-Office Dashboard)Dashboard Metrik & Akumulasi Bulanan:Total omzet bulanan (akumulasi otomatis dari penjualan reguler + reservasi meja).Total omzet kasir / dine-in.Total perolehan booking meja online.Total porsi pecel yang terjual.Filter interaktif berdasarkan bulan dan tahun.Pencatatan Penjualan Harian (Daily Sales):Form input penjualan per tanggal (porsi dan nominal transaksi reguler).Integrasi otomatis dengan omzet booking meja terkonfirmasi pada tanggal yang sama.Monitoring Reservasi Terbaru: Daftar transaksi booking lengkap dengan status konfirmasi.🛠️ Persyaratan SistemPHP >= 8.2Composer >= 2.2MySQL / MariaDB >= 10.4Web Browser modern dengan dukungan JavaScript🚀 Panduan Instalasi & Menjalankan ProyekIkuti langkah-langkah berikut untuk menjalankan proyek di komputer lokal:1. Clone Repositori / Ekstrak Proyekgit clone https://github.com/username/pecel-resto.git
+cd pecel-resto
+2. Install Dependency PHPcomposer install
+3. Konfigurasi Environment (.env)Salin file .env.example menjadi .env:cp .env.example .env
+Buka file .env dan sesuaikan koneksi database Anda:DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=pecel_resto
+DB_USERNAME=root
+DB_PASSWORD=
+Generate application key:php artisan key:generate
+4. Konfigurasi Nomor WhatsApp AdminBuka app/Http/Controllers/BookingController.php dan sesuaikan variabel $adminWA dengan nomor WhatsApp bisnis resto Anda (gunakan format internasional tanpa tanda +):$adminWA = '6281234567890'; // Ganti dengan nomor WhatsApp aktif
+5. Migrasi Database & Seeder KursiJalankan migrasi untuk membuat tabel serta seeder untuk mengisi denah meja otomatis:php artisan migrate --seed --class=TableSeeder
+Data yang digenerate oleh TableSeeder:6 Meja Duo (D-01 s/d D-06)6 Meja Quad (Q-01 s/d Q-06)4 Meja Group 8 (G-01 s/d G-04)1 Grand Hall VIP 100 Orang (VIP-HALL)6. Jalankan Server Lokalphp artisan serve
+🧭 Rute Akses AplikasiHalamanURLKeteranganLanding & Reservasihttp://localhost:8000/Halaman utama pemilihan kursi dan form bookingDashboard Adminhttp://localhost:8000/admin/dashboardRingkasan akumulasi penjualan bulanan dan data bookingInput Penjualan Harianhttp://localhost:8000/admin/salesForm input omzet harian & riwayat catatan penjualan🗄️ Struktur Basis Data1. tablesMenyimpan denah dan spesifikasi meja:id, table_number, category (duo, quad, group8, vip), capacity, min_order_price, is_active.2. bookingsMenyimpan riwayat reservasi pelanggan:id, booking_code, table_id, customer_name, customer_whatsapp, booking_date, booking_time, package_name, total_price, payment_method, status (pending, confirmed, cancelled), notes.3. daily_salesPencatatan pendapatan harian dan agregasi sistem:id, sale_date, total_portions_sold, dine_in_revenue, booking_revenue, total_revenue, notes.📄 LisensiProyek ini didistribusikan di bawah lisensi MIT License.
